@@ -73,12 +73,9 @@ class GameOfLife:
         self.grid[row+3][column+36] = 1
         self.grid[row+4][column+36] = 1
 
-    def _alive_dead_nb(self, row_idx, column_idx):
         
-        '''
-        Returns the amount of alive and dead neighbouring cells (total=8)
-        '''
-
+    # Returns the amount of alive and dead neighbouring cells (total=8)
+    def _alive_dead_nb(self, row_idx, column_idx):
         alive = 0
         dead = 0
 
@@ -96,13 +93,10 @@ class GameOfLife:
         return alive, dead
 
 
+    # Generates the grid at t+1 using rules and updates it
     def _update_grid(self):
-        
-        '''
-        Generates the grid at t+1 using rules and updates it
-        '''  
-        
         next_grid = self._make_grid()
+        
         for row_idx, row in enumerate(self.grid):
             for column_idx, cell in enumerate(row):
 
